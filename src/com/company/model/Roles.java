@@ -1,7 +1,7 @@
 package com.company.model;
 
 public enum Roles{
-    ADMIN,
+    MANAGER,
     CUSTOMER,
     SELLER
 
