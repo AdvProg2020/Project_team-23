@@ -1,4 +1,7 @@
-package com.company.model;
+package com.company.model.product;
+
+import com.company.model.product.Product;
+import com.company.model.user.Customer;
 
 public class Score {
     private int score;

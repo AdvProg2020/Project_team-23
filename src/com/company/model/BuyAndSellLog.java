@@ -1,4 +1,6 @@
 package com.company.model;
+import com.company.model.status.Processes;
+
 import java.util.Date;
 
 public class BuyAndSellLog {

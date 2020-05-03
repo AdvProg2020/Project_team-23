@@ -1,5 +1,7 @@
-package com.company.model;
+package com.company.model.product;
 
+
+import com.company.model.status.OffStatus;
 
 import java.util.ArrayList;
 

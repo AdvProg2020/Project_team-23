@@ -1,9 +1,14 @@
-package com.company.model;
+package com.company.model.product;
 
+
+import com.company.model.user.Customer;
+import com.company.model.status.InventoryStatus;
+import com.company.model.status.Processes;
 
 import java.util.ArrayList;
 
     public class Product {
+
         private String productId;
         private Processes processes;
         private String Name;
@@ -15,7 +20,7 @@ import java.util.ArrayList;
         private double averageScore;
         private ArrayList<Comment> comments;
         private InventoryStatus inventoryStatus;
-        private String number;
+        private int number;
 
         public Product(String productId, String name, String brandOrCompany, double cast, Category category, String explanation,String number) {
             this.productId = productId;
@@ -24,7 +29,6 @@ import java.util.ArrayList;
             this.cast = cast;
             this.category = category;
             this.description = explanation;
-            this.number=number;
         }
 
         public void setProcesses(Processes processes) {
@@ -115,11 +119,11 @@ import java.util.ArrayList;
             return inventoryStatus;
         }
 
-        public static String getNumber() {
+        public int getNumber() {
             return number;
         }
 
-        public void setNumber(String number) {
+        public void setNumber(int number) {
             this.number = number;
         }
     }

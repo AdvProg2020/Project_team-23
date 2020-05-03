@@ -1,12 +1,16 @@
 package com.company.model;
 
 
+import com.company.model.product.Product;
+import com.company.model.user.Customer;
+import com.company.model.user.Seller;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
     public class Cart {
         private Customer customer;
-        private HashMap<Product , Integer> product ;
+        private HashMap<Product, Integer> product ;
         private ArrayList<Seller> sellersSupportThisProduct;
         private String sellerSupportThisProduct;
 

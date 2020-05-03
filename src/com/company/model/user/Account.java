@@ -1,4 +1,8 @@
-package com.company.model;
+package com.company.model.user;
+
+import com.company.model.BuyAndSellLog;
+import com.company.model.CodedDiscount;
+import com.company.model.product.Product;
 
 import java.util.ArrayList;
 import java.util.Scanner;
