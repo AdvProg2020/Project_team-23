@@ -1,8 +1,7 @@
 package com.company.model.user;
 
 
-import com.company.model.SellLog;
-import com.company.model.user.Account;
+import com.company.model.shopping.SellLog;
 
 public class Seller extends Account {
         private SellLog sellProducts;

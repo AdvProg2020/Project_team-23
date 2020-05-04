@@ -1,11 +1,10 @@
 package com.company.controller;
 
-import com.company.model.Account;
-import com.company.model.CodedDiscount;
+import com.company.model.user.Account;
+import com.company.model.shopping.CodedDiscount;
 
 import java.util.ArrayList;
 
-    import java.util.ArrayList;
 import java.util.HashMap;
 
     public class AdminController {

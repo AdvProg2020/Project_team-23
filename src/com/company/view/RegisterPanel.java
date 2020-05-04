@@ -1,7 +1,7 @@
 package com.company.view;
 
 
-import com.company.model.Roles;
+import com.company.model.user.Roles;
 
     public class RegisterPanel extends Menu {
         private String username;

@@ -1,7 +1,6 @@
 package com.company.model.user;
 
- import com.company.model.BuyAndSellLog;
- import com.company.model.user.Account;
+ import com.company.model.shopping.BuyAndSellLog;
 
  import java.util.ArrayList;
 

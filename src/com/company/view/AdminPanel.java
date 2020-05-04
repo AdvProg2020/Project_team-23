@@ -1,6 +1,6 @@
 package com.company.view;
 
-import com.company. model.Account;
+import com.company.model.user.Account;
 
     public class AdminPanel extends Account {
 

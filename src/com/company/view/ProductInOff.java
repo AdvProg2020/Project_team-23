@@ -2,7 +2,7 @@ package com.company.view;
 
 
 
-import com.company.model.Product;
+import com.company.model.product.Product;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,7 @@
 package com.company.controller;
 
 
-import com.company.model.Product;
+import com.company.model.product.Product;
 
 import java.util.ArrayList;
 import java.util.HashMap;

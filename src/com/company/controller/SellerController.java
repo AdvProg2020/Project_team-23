@@ -1,11 +1,11 @@
 package com.company.controller;
 
-    import com.company.model.Product;
-    import com.company.model.Seller;
+    import com.company.model.product.Product;
+    import com.company.model.user.Seller;
 
     import java.util.ArrayList;
 
-    class sellerController {
+    class SellerController {
         private static Seller seller;
 
         public void editPersonalInformation() {}

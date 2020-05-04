@@ -1,7 +1,7 @@
 package com.company.view;
 
-import com.company.model.Category;
-import com.company.model.Product;
+import com.company.model.product.Category;
+import com.company.model.product.Product;
 
 public class Filter {
     private Category category;

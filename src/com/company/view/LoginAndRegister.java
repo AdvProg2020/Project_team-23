@@ -1,7 +1,6 @@
 package com.company.view;
 
-import com.company.model.Account;
-import com.company. model.Roles;
+import com.company.model.user.Roles;
 
     public class LoginAndRegister extends Menu {
         private String username;

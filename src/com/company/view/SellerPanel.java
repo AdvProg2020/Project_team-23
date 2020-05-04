@@ -1,10 +1,10 @@
 package com.company.view;
 
 
-import com.company.model.Account;
-import com.company.model.Category;
-import com.company.model.Off;
-import com.company.model.Seller;
+import com.company.model.user.Account;
+import com.company.model.product.Category;
+import com.company.model.product.Off;
+import com.company.model.user.Seller;
 
 import java.util.ArrayList;
 

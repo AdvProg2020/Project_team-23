@@ -1,4 +1,4 @@
-package com.company.model;
+package com.company.model.shopping;
 import com.company.model.status.Processes;
 
 import java.util.Date;

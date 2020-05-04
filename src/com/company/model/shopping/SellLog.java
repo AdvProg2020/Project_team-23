@@ -1,7 +1,8 @@
-package com.company.model;
+package com.company.model.shopping;
 
 
 import com.company.model.product.Product;
+import com.company.model.shopping.BuyAndSellLog;
 
 import java.util.ArrayList;
 
