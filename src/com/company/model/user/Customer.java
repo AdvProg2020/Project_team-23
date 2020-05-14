@@ -11,6 +11,18 @@ package com.company.model.user;
             super(username, password);
         }
 
+
+
+        @Override
+        public String toString() {
+            return "Customer{" +
+                    "username='" + username + '\'' +
+                    ", firstName='" + firstName + '\'' +
+                    ", lastName='" + lastName + '\'' +
+                    ", roles='" + roles + '\'' +
+                    ", money=" + money +
+                    '}';
+        }
     }
 
 

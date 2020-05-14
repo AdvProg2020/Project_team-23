@@ -17,6 +17,7 @@ public class Account {
         protected String roles;
         protected ArrayList<CodedDiscount> codedDiscounts;
         private ArrayList<BuyAndSellLog> logs;
+        protected ArrayList<Product> productsHistory;
         private Scanner scanner;
         public Account(String username, String firstName, String lastName, String Email, String phone, String password, String roles){
            this.username=username;
@@ -63,10 +64,12 @@ public class Account {
 
         protected double money;
 
-        protected Product[] getProduct() {
-            Scanner scanner=new Scanner(System.in);
-                String product = scanner.nextLine();
-            return getProduct();
-        }
+    public ArrayList<Product> getProductsHistory() {
+        return productsHistory;
     }
+
+    public void setProductsHistory(ArrayList<Product> productsHistory) {
+        this.productsHistory = productsHistory;
+    }
+}
 

@@ -3,6 +3,7 @@ package com.company.model.user;
 public enum Roles{
     MANAGER,
     CUSTOMER,
-    SELLER
+    SELLER,
+    GUEST
 
 }
