@@ -62,5 +62,15 @@ public class SellLog extends BuyAndSellLog {
                         ", date=" + date +
                         '}';
         }
+
+        @Override
+        public String getId() {
+                return super.getId();
+        }
+
+        @Override
+        public Date getDate() {
+                return super.getDate();
+        }
 }
 

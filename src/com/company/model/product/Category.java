@@ -47,6 +47,13 @@ package com.company.model.product;
             allCategories.remove(category);
         }
 
+        public String getProperty() {
+            return property;
+        }
+
+        public void setProperty(String property) {
+            this.property = property;
+        }
     }
 
 

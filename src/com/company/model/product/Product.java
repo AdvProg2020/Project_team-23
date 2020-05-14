@@ -1,6 +1,5 @@
 package com.company.model.product;
 
-
 import com.company.model.user.Customer;
 import com.company.model.status.InventoryStatus;
 import com.company.model.status.Processes;
@@ -16,6 +15,7 @@ import java.util.ArrayList;
         private double cast;
         private Customer customer;
         private Category category;
+        private Category specialFeatureCategory;
         private String description;
         private double averageScore;
         private ArrayList<Comment> comments;
@@ -29,6 +29,11 @@ import java.util.ArrayList;
             this.cast = cast;
             this.category = category;
             this.description = explanation;
+        }
+
+        public String getSpecialFeatureCategory() {
+            Category c = new Category(getName());
+            return c.getProperty();
         }
 
         public void setProcesses(Processes processes) {

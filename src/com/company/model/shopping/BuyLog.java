@@ -52,5 +52,14 @@ public class BuyLog extends BuyAndSellLog {
         return processesForBuy;
     }
 
+    @Override
+    public String getId() {
+        return super.getId();
+    }
+
+    @Override
+    public Date getDate() {
+        return super.getDate();
+    }
 }
 

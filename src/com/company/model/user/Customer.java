@@ -1,5 +1,6 @@
 package com.company.model.user;
 
+ import com.company.model.product.Product;
  import com.company.model.shopping.BuyAndSellLog;
 
  import java.util.ArrayList;
@@ -12,6 +13,50 @@ package com.company.model.user;
         }
 
 
+        @Override
+        public void setFirstName(String firstName) {
+            super.setFirstName(firstName);
+        }
+
+        @Override
+        public void setLastName(String lastName) {
+            super.setLastName(lastName);
+        }
+
+        @Override
+        public void setEmail(String email) {
+            super.setEmail(email);
+        }
+
+        @Override
+        public void setPhone(String phone) {
+            super.setPhone(phone);
+        }
+
+        @Override
+        public void setPassword(String password) {
+            super.setPassword(password);
+        }
+
+        @Override
+        public void setRoles(String roles) {
+            super.setRoles(roles);
+        }
+
+        @Override
+        public void setMoney(double money) {
+            super.setMoney(money);
+        }
+
+        @Override
+        public ArrayList<Product> getProductsHistory() {
+            return super.getProductsHistory();
+        }
+
+        @Override
+        public void setProductsHistory(ArrayList<Product> productsHistory) {
+            super.setProductsHistory(productsHistory);
+        }
 
         @Override
         public String toString() {
