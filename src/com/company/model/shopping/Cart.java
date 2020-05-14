@@ -9,8 +9,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
     public class Cart {
-        private Customer customer;
-        private HashMap<Product, Integer> product ;
+        private Product product;
+        private int number;
+        private Seller seller;
         private ArrayList<Seller> sellersSupportThisProduct;
         private String sellerSupportThisProduct;
 
@@ -22,21 +23,22 @@ import java.util.HashMap;
             this.sellerSupportThisProduct = sellerSupportThisProduct;
         }
 
-        public Customer getCustomer() {
-            return customer;
+        public Seller getSeller() {
+            return seller;
         }
 
-        public void setCustomer(Customer customer) {
-            this.customer = customer;
+        public void setSeller(Seller seller) {
+            this.seller = seller;
         }
 
-        public HashMap<Product, Integer> getProduct() {
-            return product;
+        public int getNumber() {
+            return number;
         }
 
-        public void setProduct(HashMap<Product, Integer> product) {
-            this.product = product;
+        public void setNumber(int number) {
+            this.number = number;
         }
+
         private void addCartToData(){
 
         }
