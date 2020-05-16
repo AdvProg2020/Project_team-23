@@ -36,24 +36,14 @@ public class RegisterPanel extends Menu {
         chooseUsername();
     }
 
-    private boolean isCorrectPattern(String input, String patternCorrect) {
-        Pattern pattern = Pattern.compile(patternCorrect);
-        Matcher matcher = pattern.matcher(input);
-        if (matcher.find()) {
-            return true;
-        }
-        return false;
-    }
-
     public void chooseUsername() {
-        String userNamePattern = "(\\D*)(\\d*)";
         Scanner sc = new Scanner(System.in);
         RegisterAndLoginController registerAndLoginController = new RegisterAndLoginController();
 
         while (true) {
             System.out.println("enter username: ");
             String input = sc.nextLine();
-            if (isCorrectPattern(input, userNamePattern) == true) {
+            if (isUsernameValid(input) == true) {
                 registerAndLoginController.setUsername(input);
                 System.out.println(input);
                 enterFirstNameAndLastName();
@@ -67,29 +57,43 @@ public class RegisterPanel extends Menu {
     }
 
     public void enterFirstNameAndLastName() {
-        System.out.println("Enter first name : ");
         RegisterAndLoginController registerAndLoginController = new RegisterAndLoginController();
+        String input;
         Scanner sc = new Scanner(System.in);
         String name[] = new String[2];
-        String input = sc.nextLine();
-        name[0] = input;
-        registerAndLoginController.setFirstName(input);
-        System.out.println("Enter last name : ");
-        registerAndLoginController.setLastName(input);
-        name[1] = input;
+        while (true) {
+            System.out.println("Enter first name : ");
+            input = sc.nextLine();
+            name[0] = input;
+            if (isNameValid(name[0]) == true) {
+                registerAndLoginController.setFirstName(input);
+                break;
+            }else {
+                continue;
+            }
+        }
+        while (true) {
+            System.out.println("Enter last name : ");
+            input = sc.nextLine();
+            name[1] = input;
+            if (isNameValid(name[1]) == true) {
+                registerAndLoginController.setLastName(input);
+                break;
+            }else {
+                continue;
+            }
+        }
         System.out.println("firstName: " + name[0] + ", lastName: " + name[1]);
-
         enterEmail();
     }
 
     public void enterEmail() {
-        String emailPattern = "(((\\D*)(\\d*)(\\.*))@(\\D+).com)";
         RegisterAndLoginController registerAndLoginController = new RegisterAndLoginController();
         Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
         while (true) {
             System.out.println("enter your Email: ");
-            if (isCorrectPattern(input, emailPattern) == true) {
+            String input = sc.nextLine();
+            if (isEmailAddressValid(input) == true) {
                 registerAndLoginController.setEmail(input);
                 System.out.println("Email: " + input);
                 enterPhone();
@@ -107,11 +111,10 @@ public class RegisterPanel extends Menu {
     public void enterPhone() {
         RegisterAndLoginController registerAndLoginController = new RegisterAndLoginController();
         Scanner sc = new Scanner(System.in);
-        String phonePattern = "(0(\\d+))";
         while (true) {
             System.out.println("enter your phone: ");
             String input = sc.nextLine();
-            if (isCorrectPattern(input, phonePattern)) {
+            if (isPhoneNumberValid(input) == true) {
                 registerAndLoginController.setPhone(input);
                 System.out.println("phone: " + input);
                 enterPassword();
@@ -128,15 +131,15 @@ public class RegisterPanel extends Menu {
         Scanner sc = new Scanner(System.in);
         String passwordPattern = "((\\d+)(\\D+)(\\.*))";
         while (true) {
-            System.out.println("Set your password: (you must have at least a number and a letter) ");
+            System.out.println("Set your password: ");
             String input = sc.nextLine();
-            if (isCorrectPattern(input, passwordPattern) == true) {
+            if (isPasswordValid(input) == true) {
                 registerAndLoginController.setPassword(input);
                 System.out.println("password: " + input);
                 chooseRole();
                 break;
             } else {
-                System.out.println("you can use just letter and number and '.' character! ");
+                System.out.println("you can use just letter and number and '.' character! must use at least 8 character. ");
                 continue;
             }
         }
@@ -157,5 +160,43 @@ public class RegisterPanel extends Menu {
             }
         }
     }
+
+    private boolean isUsernameValid(String username) {
+        if ((Pattern.matches("\\w+", username)) && (username.length() >= 4)) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isNameValid(String name) {
+        if ((Pattern.matches("\\w+", name)) && (name.length() >= 1)) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isPasswordValid(String password) {
+        if ((Pattern.matches("(\\w+)|(\\d+)", password)) && (password.length() >= 8)) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isEmailAddressValid(String emailAddress) {
+        if ((Pattern.matches("((\\w+\\.?\\w*@\\w+)\\.com)", emailAddress))) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isPhoneNumberValid(String phoneNumber) {
+        if (Pattern.matches("0(\\d+)", phoneNumber) && phoneNumber.length() == 11) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 }
 
