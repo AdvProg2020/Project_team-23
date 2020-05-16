@@ -11,8 +11,8 @@ import com.company.model.product.Product;
 
         }
         public void selectCustomer(String username){
-            Product product = null;
-            product.setNumber(Product.getNumber());
+            Product product = new Product();
+            product.setNumber(product.getNumber());
 
         }
         public boolean isSellerSupportThisProduct(){

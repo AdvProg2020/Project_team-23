@@ -31,6 +31,10 @@ import java.util.ArrayList;
             this.description = explanation;
         }
 
+        public Product() {
+
+        }
+
         public String getSpecialFeatureCategory() {
             Category c = new Category(getName());
             return c.getProperty();
