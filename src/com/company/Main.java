@@ -12,7 +12,4 @@ public class Main {
         CommandPro.recognizeCommand(command);
     }
 
-    public void getScanner(){
-
-    }
 }
