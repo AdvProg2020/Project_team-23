@@ -1,6 +1,8 @@
 package com.company.view;
 
 
+import com.company.Main;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,6 +10,7 @@ import java.util.regex.Pattern;
         private String command;
 
         public static void recognizeCommand(String command) {
+            Main main = new Main();
 //            String commandPattern = null;
 //            Pattern pattern = Pattern.compile(commandPattern);
 //            Matcher matcher = pattern.matcher(command);

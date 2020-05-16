@@ -10,6 +10,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String command = scanner.nextLine();
         CommandPro.recognizeCommand(command);
+    }
+
+    public void getScanner(){
 
     }
 }
