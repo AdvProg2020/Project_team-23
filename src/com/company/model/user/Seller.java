@@ -16,11 +16,12 @@ public class Seller extends Account {
     @Override
     public String toString() {
         return "Seller{" +
-                "company='" + company + '\'' +
-                ", username='" + username + '\'' +
+                "username='" + username + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", roles='" + roles + '\'' +
+                ", Email='" + Email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", money=" + money +
                 '}';
     }
 

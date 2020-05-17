@@ -12,7 +12,8 @@ public class Manager  extends Account {
                 "username='" + username + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", roles='" + roles + '\'' +
+                ", Email='" + Email + '\'' +
+                ", phone='" + phone + '\'' +
                 '}';
     }
 

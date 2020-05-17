@@ -2,6 +2,9 @@ package com.company.view;
 
 
 import com.company.Main;
+import com.company.controller.CostumerController;
+import com.company.model.user.Account;
+import com.company.model.user.Roles;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -20,8 +23,13 @@ import java.util.regex.Pattern;
             String input;
             if (command.equalsIgnoreCase("help")) {
                 help();
-            } else if (command.equalsIgnoreCase("sort by ")) {
+            } else if (command.equalsIgnoreCase("view personal info")) {
+                Account account = new Account();
+                if (account.getRoles()== Roles.CUSTOMER)
+                    CostumerController.viewPersonalInfo();
+                else if (account.getRoles()==Roles.SELLER){
 
+                }
 
             } else if (command.equalsIgnoreCase("login")) {
 

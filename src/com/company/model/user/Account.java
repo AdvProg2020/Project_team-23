@@ -34,6 +34,10 @@ public class Account {
 
     }
 
+    public Account() {
+
+    }
+
     public void addNewUser(Account account){
         RegisterAndLoginController registerAndLoginController = new RegisterAndLoginController();
         if (isThisUsernameTaken(registerAndLoginController.getUsername()) == false) {
@@ -95,6 +99,10 @@ public class Account {
 
     public void setProductsHistory(ArrayList<Product> productsHistory) {
         this.productsHistory = productsHistory;
+    }
+
+    public Roles getRoles() {
+        return roles;
     }
 }
 

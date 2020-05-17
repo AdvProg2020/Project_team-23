@@ -12,6 +12,10 @@ package com.company.model.user;
             super(username, password);
         }
 
+        public Customer() {
+            super();
+        }
+
 
         @Override
         public void setFirstName(String firstName) {
@@ -39,7 +43,7 @@ package com.company.model.user;
         }
 
         @Override
-        public void setRoles(String roles) {
+        public void setRoles(Roles roles) {
             super.setRoles(roles);
         }
 
@@ -64,7 +68,8 @@ package com.company.model.user;
                     "username='" + username + '\'' +
                     ", firstName='" + firstName + '\'' +
                     ", lastName='" + lastName + '\'' +
-                    ", roles='" + roles + '\'' +
+                    ", Email='" + Email + '\'' +
+                    ", phone='" + phone + '\'' +
                     ", money=" + money +
                     '}';
         }
