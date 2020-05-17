@@ -25,7 +25,7 @@ public class RegisterPanel extends Menu {
         this.lastName = lastName;
         Email = email;
         this.phone = phone;
-        this.roles = roles;
+        this.roles = Roles.GUEST;
     }
 
     public RegisterPanel() {
@@ -36,10 +36,13 @@ public class RegisterPanel extends Menu {
         String word[] = str.split(" ");
         //word[2] = type
         //word[3] = username
-        roles.equals(word[2]);
-        chooseUsername(word[3]);
-        chooseRole(roles);
-
+        if (word[2].equalsIgnoreCase("seller")){
+            roles = Roles.SELLER;
+            chooseRole(roles);
+        }else if (word[2].equalsIgnoreCase("customer")){
+            roles = Roles.CUSTOMER;
+            chooseRole(roles);
+        }
     }
 
     public void chooseUsername(String input) {
