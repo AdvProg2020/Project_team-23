@@ -1,6 +1,8 @@
 package com.company.controller;
 
+import com.company.model.user.Account;
 import com.company.model.user.Roles;
+import com.company.view.RegisterPanel;
 
 public class RegisterAndLoginController {
     private String username;
@@ -10,9 +12,23 @@ public class RegisterAndLoginController {
     private String Email;
     private String phone;
     private Roles roles;
+    private boolean isRegisterSuccessfully;
+
+    public void setRegisterSuccessfully(boolean registerSuccessfully) {
+        isRegisterSuccessfully = registerSuccessfully;
+        if (isRegisterSuccessfully==false){
+            duplicateUsernameError();
+        }else {
+
+        }
+    }
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public void setPassword(String password) {
@@ -40,14 +56,25 @@ public class RegisterAndLoginController {
     }
 
     public int login() {
-            //return s.th
-            return 0;
-        }
-
-        public boolean register() {
-            return false;
-        }
-
-        public void createAccount() {}
+        //return s.th
+        return 0;
     }
+
+    private void duplicateUsernameError(){
+        RegisterPanel.printThisUsernameTaken();
+    }
+
+    public void addNewAccount(){
+        Account account = new Account(username , password , firstName, lastName, Email, phone, roles);
+       account.addNewUser(account);
+        RegisterPanel.printSuccessfullyRegister();
+    }
+
+    public boolean register() {
+        return false;
+    }
+
+    public void createAccount() {
+    }
+}
 

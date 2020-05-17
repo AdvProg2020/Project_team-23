@@ -32,21 +32,25 @@ public class RegisterPanel extends Menu {
 
     }
 
-    public void registerAccount() {
-        chooseUsername();
+    public void registerAccount(String str) {
+        String word[] = str.split(" ");
+        //word[2] = type
+        //word[3] = username
+        roles.equals(word[2]);
+        chooseUsername(word[3]);
+        chooseRole(roles);
+
     }
 
-    public void chooseUsername() {
-        Scanner sc = new Scanner(System.in);
+    public void chooseUsername(String input) {
         RegisterAndLoginController registerAndLoginController = new RegisterAndLoginController();
 
         while (true) {
             System.out.println("enter username: ");
-            String input = sc.nextLine();
             if (isUsernameValid(input) == true) {
                 registerAndLoginController.setUsername(input);
                 System.out.println(input);
-                enterFirstNameAndLastName();
+                enterPassword();
                 break;
 
             } else {
@@ -117,7 +121,7 @@ public class RegisterPanel extends Menu {
             if (isPhoneNumberValid(input) == true) {
                 registerAndLoginController.setPhone(input);
                 System.out.println("phone: " + input);
-                enterPassword();
+                registerAndLoginController.addNewAccount();
                 break;
             } else {
                 System.out.println("Please enter a valid phone number! ");
@@ -136,7 +140,7 @@ public class RegisterPanel extends Menu {
             if (isPasswordValid(input) == true) {
                 registerAndLoginController.setPassword(input);
                 System.out.println("password: " + input);
-                chooseRole();
+                enterFirstNameAndLastName();
                 break;
             } else {
                 System.out.println("you can use just letter and number and '.' character! must use at least 8 character. ");
@@ -145,20 +149,9 @@ public class RegisterPanel extends Menu {
         }
     }
 
-    public void chooseRole() {
+    public void chooseRole(Roles role) {
         RegisterAndLoginController registerAndLoginController = new RegisterAndLoginController();
-        Scanner sc = new Scanner(System.in);
-        while (true) {
-            System.out.println("choose your role: seller or customer? ");
-            String input = sc.nextLine();
-            if ((input.equalsIgnoreCase("customer")) || ((input.equalsIgnoreCase("seller")))) {
-                registerAndLoginController.setRoles(roles);
-                break;
-            } else {
-                System.out.println("You must choose seller or customer role! ");
-                continue;
-            }
-        }
+        registerAndLoginController.setRoles(role);
     }
 
     private boolean isUsernameValid(String username) {
@@ -196,7 +189,13 @@ public class RegisterPanel extends Menu {
             return false;
         }
     }
+    public static void printThisUsernameTaken(){
+        System.out.println("This username was taken");
+    }
 
+    public static void printSuccessfullyRegister(){
+        System.out.println("Successfully Register :) ");
+    }
 
 }
 

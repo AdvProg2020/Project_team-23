@@ -3,19 +3,21 @@ package com.company.view;
 
 import com.company.Main;
 
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
     public class CommandPro {
-        private String command;
 
         public static void recognizeCommand(String command) {
-            Main main = new Main();
+
 //            String commandPattern = null;
 //            Pattern pattern = Pattern.compile(commandPattern);
 //            Matcher matcher = pattern.matcher(command);
             //we have to define patterns for commands then
             //if command matches with a pattern we run the command
+            Scanner scanner = new Scanner(System.in);
+            String input;
             if (command.equalsIgnoreCase("help")) {
                 help();
             } else if (command.equalsIgnoreCase("sort by ")) {
@@ -25,7 +27,9 @@ import java.util.regex.Pattern;
 
             } else if (command.equalsIgnoreCase("register")) {
                 RegisterPanel registerPanel = new RegisterPanel();
-                registerPanel.registerAccount();
+                input = scanner.nextLine();
+                if (input.startsWith("create account "))
+                    registerPanel.registerAccount(input);
 
             } else if (command.equalsIgnoreCase("")) {
 
