@@ -13,6 +13,10 @@ public class Seller extends Account {
             super(username, password);
         }
 
+    public Seller() {
+
+    }
+
     @Override
     public String toString() {
         return "Seller{" +
@@ -23,6 +27,11 @@ public class Seller extends Account {
                 ", phone='" + phone + '\'' +
                 ", money=" + money +
                 '}';
+    }
+
+    @Override
+    public double getMoney() {
+        return super.getMoney();
     }
 
     @Override

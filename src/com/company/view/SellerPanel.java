@@ -4,6 +4,7 @@ package com.company.view;
 import com.company.model.user.Account;
 import com.company.model.product.Category;
 import com.company.model.product.Off;
+import com.company.model.user.Roles;
 import com.company.model.user.Seller;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
         private ArrayList<Category> categories;
         private ArrayList<Off> offs;
 
-        public SellerPanel(String username, String firstName, String lastName, String Email, String phone, String password, String roles) {
+        public SellerPanel(String username, String firstName, String lastName, String Email, String phone, String password, Roles roles) {
             super(username, firstName, lastName, Email, phone, password, roles);
         }
         private void viewPersonalInfo(){

@@ -5,14 +5,17 @@ package com.company.controller;
 
     import java.util.ArrayList;
 
-    class SellerController {
+    public class SellerController {
         private static Seller seller;
 
         public void editPersonalInformation() {}
 
         public void editProductInformation() {}
 
-        public void addProduct(String productId, String name, String brandOrCompany, double cast, double averageScore, Seller seller, String category, ArrayList<String> subCategory, String description) {}
+        public void addProduct(String productId, String name, String brandOrCompany, double cast,
+                               double averageScore, Seller seller, String category, ArrayList<String> subCategory, String description) {
+
+        }
 
         public void removeProduct() {}
 
@@ -21,6 +24,11 @@ package com.company.controller;
         public void addOff(String id, ArrayList<Product> products, String exactStartTime , String exactEndTime , int offAmount) {}
 
         public static void viewCredit() {}
+
+        public double viewBalance() {
+            Seller seller = new Seller();
+            return seller.getMoney();
+        }
 
 
 

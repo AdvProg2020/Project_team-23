@@ -17,6 +17,7 @@ public class Account {
     protected String phone;
     protected String password;
     protected Roles roles;
+    protected double money;
     protected ArrayList<CodedDiscount> codedDiscounts;
     private ArrayList<BuyAndSellLog> logs;
     protected ArrayList<Product> productsHistory;
@@ -91,8 +92,6 @@ public class Account {
         this.money = money;
     }
 
-    protected double money;
-
     public ArrayList<Product> getProductsHistory() {
         return productsHistory;
     }
@@ -103,6 +102,10 @@ public class Account {
 
     public Roles getRoles() {
         return roles;
+    }
+
+    public double getMoney() {
+        return money;
     }
 }
 

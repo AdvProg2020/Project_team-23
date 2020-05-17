@@ -16,6 +16,10 @@ package com.company.model.user;
             super();
         }
 
+        @Override
+        public double getMoney() {
+            return super.getMoney();
+        }
 
         @Override
         public void setFirstName(String firstName) {

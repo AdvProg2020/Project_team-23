@@ -20,20 +20,6 @@ public class CostumerController {
     public void viewCart() {
     }
 
-    public void showProduct() {
-    }
-
-
-    public static void increaseProductNumbers() {
-    }
-
-    public static void decreaseProductNumbers() {
-    }
-
-    public int showTotalPrice() {
-        return 0;
-    }
-
     public void purchase() {
     }
 
@@ -61,8 +47,9 @@ public class CostumerController {
         return false;
     }
 
-    public int viewBalance() {
-        return 0;
+    public double viewBalance() {
+        Customer customer = new Customer();
+        return customer.getMoney();
     }
 
     public ArrayList<String> viewDiscountCodes() {
