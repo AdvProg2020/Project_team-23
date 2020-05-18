@@ -15,18 +15,82 @@ package com.company.controller;
                 System.out.println("you can't edit your username !");
 
             }else if (field.equalsIgnoreCase("phone")){
-                seller.setPhone(editedField);
+                editPhone(editedField);
             }else if (field.equalsIgnoreCase("email")){
-                seller.setEmail(editedField);
+                editEmail(editedField);
 
             }else if (field.equalsIgnoreCase("first")){
-                seller.setFirstName(editedField);
+                editFirstName(editedField);
 
             }else if (field.equalsIgnoreCase("last")){
-                seller.setLastName(editedField);
+                editLastName(editedField);
 
             }else if (field.equalsIgnoreCase("password")){
-                seller.setPassword(editedField);
+                editPassword(editedField);
+            }
+        }
+        private static void editPhone(String phone){
+            Seller seller = new Seller();
+            while (true) {
+                if (RegisterAndLoginController.isPhoneNumberValid(phone) == true) {
+                    seller.setPhone(phone);
+                    break;
+                } else {
+                    System.out.println("invalid phone");
+                    continue;
+                }
+            }
+        }
+
+        private static void editEmail (String email){
+            Seller seller = new Seller();
+            while (true) {
+                if (RegisterAndLoginController.isEmailAddressValid(email) == true) {
+                    seller.setEmail(email);
+                    break;
+                } else {
+                    System.out.println("invalid Email");
+                    continue;
+                }
+            }
+        }
+
+        private static void editFirstName(String firstName){
+            Seller seller = new Seller();
+            while (true) {
+                if (RegisterAndLoginController.isPhoneNumberValid(firstName) == true) {
+                    seller.setPhone(firstName);
+                    break;
+                } else {
+                    System.out.println("invalid name");
+                    continue;
+                }
+            }
+        }
+
+        private static void editLastName(String lastName){
+            Seller seller = new Seller();
+            while (true) {
+                if (RegisterAndLoginController.isPhoneNumberValid(lastName) == true) {
+                    seller.setPhone(lastName);
+                    break;
+                } else {
+                    System.out.println("invalid name");
+                    continue;
+                }
+            }
+        }
+
+        private static void editPassword (String password){
+            Seller seller = new Seller();
+            while (true) {
+                if (RegisterAndLoginController.isPhoneNumberValid(password) == true) {
+                    seller.setPhone(password);
+                    break;
+                } else {
+                    System.out.println("invalid password");
+                    continue;
+                }
             }
         }
 

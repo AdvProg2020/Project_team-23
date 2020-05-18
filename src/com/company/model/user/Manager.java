@@ -6,6 +6,10 @@ import java.util.ArrayList;
 
 public class Manager  extends Account {
 
+    public Manager() {
+
+    }
+
     @Override
     public String toString() {
         return "Manager{" +

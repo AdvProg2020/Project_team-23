@@ -34,7 +34,7 @@ public class CostumerController {
         }
     }
 
-    private void editPhone(String phone){
+    private static void editPhone(String phone){
         Customer customer = new Customer();
         while (true) {
             if (RegisterAndLoginController.isPhoneNumberValid(phone) == true) {
@@ -47,7 +47,7 @@ public class CostumerController {
         }
     }
 
-    private void editEmail (String email){
+    private static void editEmail (String email){
         Customer customer = new Customer();
         while (true) {
             if (RegisterAndLoginController.isEmailAddressValid(email) == true) {
@@ -60,7 +60,7 @@ public class CostumerController {
         }
     }
 
-    private void editFirstName(String firstName){
+    private static void editFirstName(String firstName){
         Customer customer = new Customer();
         while (true) {
             if (RegisterAndLoginController.isPhoneNumberValid(firstName) == true) {
@@ -73,7 +73,7 @@ public class CostumerController {
         }
     }
 
-    private void editLastName(String lastName){
+    private static void editLastName(String lastName){
         Customer customer = new Customer();
         while (true) {
             if (RegisterAndLoginController.isPhoneNumberValid(lastName) == true) {
@@ -86,7 +86,7 @@ public class CostumerController {
         }
     }
 
-    private void editPassword (String password){
+    private static void editPassword (String password){
         Customer customer = new Customer();
         while (true) {
             if (RegisterAndLoginController.isPhoneNumberValid(password) == true) {

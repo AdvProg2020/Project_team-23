@@ -2,6 +2,7 @@ package com.company.view;
 
 
 import com.company.Main;
+import com.company.controller.AdminController;
 import com.company.controller.CostumerController;
 import com.company.controller.SellerController;
 import com.company.model.user.Account;
@@ -62,6 +63,8 @@ public class CommandPro {
             CostumerController.viewPersonalInfo();
         else if (account.getRoles() == Roles.SELLER) {
             SellerController.viewPersonalInfo();
+        }else if (account.getRoles() == Roles.MANAGER){
+            AdminController.viewPersonalInformation();
         }
     }
 
@@ -78,6 +81,7 @@ public class CommandPro {
     private static void editField(String command){
         CostumerController costumerController = new CostumerController();
         SellerController sellerController = new SellerController();
+        AdminController adminController = new AdminController();
         Account account = new Account();
         String word[] = command.split("\\s+");
         if ((word[2].equalsIgnoreCase("first")) || (word[2].equalsIgnoreCase("last"))){
@@ -85,12 +89,20 @@ public class CommandPro {
                 costumerController.editPersonalInformation(word[1] , word[3]);
             }else if (account.getRoles() == Roles.SELLER){
                 sellerController.editPersonalInformation(word[1] , word[3]);
+            }else if (account.getRoles() == Roles.MANAGER){
+                adminController.editPersonalInformation(word[1] , word[3]);
+            }else {
+                System.out.println("you must register first! ");
             }
         }else {
             if (account.getRoles() == Roles.CUSTOMER){
                 costumerController.editPersonalInformation(word[1] , word[2]);
             }else if (account.getRoles() == Roles.SELLER){
                 sellerController.editPersonalInformation(word[1] , word[2]);
+            }else if (account.getRoles() == Roles.MANAGER){
+                adminController.editPersonalInformation(word[1] , word[2]);
+            }else {
+                System.out.println("you must register first! ");
             }
         }
     }
