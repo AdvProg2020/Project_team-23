@@ -80,12 +80,19 @@ public class CommandPro {
         SellerController sellerController = new SellerController();
         Account account = new Account();
         String word[] = command.split("\\s+");
-        if (account.getRoles() == Roles.CUSTOMER){
-            costumerController.editPersonalInformation(word[1] , word[2]);
-        }else if (account.getRoles() == Roles.SELLER){
-            sellerController.editPersonalInformation(word[1] , word[2]);
+        if ((word[2].equalsIgnoreCase("first")) || (word[2].equalsIgnoreCase("last"))){
+            if (account.getRoles() == Roles.CUSTOMER){
+                costumerController.editPersonalInformation(word[1] , word[3]);
+            }else if (account.getRoles() == Roles.SELLER){
+                sellerController.editPersonalInformation(word[1] , word[3]);
+            }
+        }else {
+            if (account.getRoles() == Roles.CUSTOMER){
+                costumerController.editPersonalInformation(word[1] , word[2]);
+            }else if (account.getRoles() == Roles.SELLER){
+                sellerController.editPersonalInformation(word[1] , word[2]);
+            }
         }
-
     }
 
     private static void help() {

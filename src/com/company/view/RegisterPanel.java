@@ -50,7 +50,7 @@ public class RegisterPanel extends Menu {
 
         while (true) {
             System.out.println("enter username: ");
-            if (isUsernameValid(input) == true) {
+            if (registerAndLoginController.isUsernameValid(input) == true) {
                 registerAndLoginController.setUsername(input);
                 System.out.println(input);
                 enterPassword();
@@ -72,7 +72,7 @@ public class RegisterPanel extends Menu {
             System.out.println("Enter first name : ");
             input = sc.nextLine();
             name[0] = input;
-            if (isNameValid(name[0]) == true) {
+            if (registerAndLoginController.isNameValid(name[0]) == true) {
                 registerAndLoginController.setFirstName(input);
                 break;
             }else {
@@ -83,7 +83,7 @@ public class RegisterPanel extends Menu {
             System.out.println("Enter last name : ");
             input = sc.nextLine();
             name[1] = input;
-            if (isNameValid(name[1]) == true) {
+            if (registerAndLoginController.isNameValid(name[1]) == true) {
                 registerAndLoginController.setLastName(input);
                 break;
             }else {
@@ -100,7 +100,7 @@ public class RegisterPanel extends Menu {
         while (true) {
             System.out.println("enter your Email: ");
             String input = sc.nextLine();
-            if (isEmailAddressValid(input) == true) {
+            if (registerAndLoginController.isEmailAddressValid(input) == true) {
                 registerAndLoginController.setEmail(input);
                 System.out.println("Email: " + input);
                 enterPhone();
@@ -121,7 +121,7 @@ public class RegisterPanel extends Menu {
         while (true) {
             System.out.println("enter your phone: ");
             String input = sc.nextLine();
-            if (isPhoneNumberValid(input) == true) {
+            if (registerAndLoginController.isPhoneNumberValid(input) == true) {
                 registerAndLoginController.setPhone(input);
                 System.out.println("phone: " + input);
                 registerAndLoginController.addNewAccount();
@@ -136,11 +136,10 @@ public class RegisterPanel extends Menu {
     public void enterPassword() {
         RegisterAndLoginController registerAndLoginController = new RegisterAndLoginController();
         Scanner sc = new Scanner(System.in);
-        String passwordPattern = "((\\d+)(\\D+)(\\.*))";
         while (true) {
             System.out.println("Set your password: ");
             String input = sc.nextLine();
-            if (isPasswordValid(input) == true) {
+            if (registerAndLoginController.isPasswordValid(input) == true) {
                 registerAndLoginController.setPassword(input);
                 System.out.println("password: " + input);
                 enterFirstNameAndLastName();
@@ -157,41 +156,6 @@ public class RegisterPanel extends Menu {
         registerAndLoginController.setRoles(role);
     }
 
-    private boolean isUsernameValid(String username) {
-        if ((Pattern.matches("\\w+", username)) && (username.length() >= 4)) {
-            return true;
-        }
-        return false;
-    }
-
-    private boolean isNameValid(String name) {
-        if ((Pattern.matches("\\w+", name)) && (name.length() >= 1)) {
-            return true;
-        }
-        return false;
-    }
-
-    private boolean isPasswordValid(String password) {
-        if ((Pattern.matches("(\\w+)|(\\d+)", password)) && (password.length() >= 8)) {
-            return true;
-        }
-        return false;
-    }
-
-    private boolean isEmailAddressValid(String emailAddress) {
-        if ((Pattern.matches("((\\w+\\.?\\w*@\\w+)\\.com)", emailAddress))) {
-            return true;
-        }
-        return false;
-    }
-
-    private boolean isPhoneNumberValid(String phoneNumber) {
-        if (Pattern.matches("0(\\d+)", phoneNumber) && phoneNumber.length() == 11) {
-            return true;
-        } else {
-            return false;
-        }
-    }
     public static void printThisUsernameTaken(){
         System.out.println("This username was taken");
     }

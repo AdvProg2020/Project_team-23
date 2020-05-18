@@ -4,6 +4,8 @@ import com.company.model.user.Account;
 import com.company.model.user.Roles;
 import com.company.view.RegisterPanel;
 
+import java.util.regex.Pattern;
+
 public class RegisterAndLoginController {
     private String username;
     private String password;
@@ -75,6 +77,42 @@ public class RegisterAndLoginController {
     }
 
     public void createAccount() {
+    }
+
+    public static boolean isUsernameValid(String username) {
+        if ((Pattern.matches("\\w+", username)) && (username.length() >= 4)) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isNameValid(String name) {
+        if ((Pattern.matches("\\w+", name)) && (name.length() >= 1)) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isPasswordValid(String password) {
+        if ((Pattern.matches("(\\w+)|(\\d+)", password)) && (password.length() >= 8)) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isEmailAddressValid(String emailAddress) {
+        if ((Pattern.matches("((\\w+\\.?\\w*@\\w+)\\.com)", emailAddress))) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isPhoneNumberValid(String phoneNumber) {
+        if (Pattern.matches("0(\\d+)", phoneNumber) && phoneNumber.length() == 11) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

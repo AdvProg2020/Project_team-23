@@ -5,6 +5,7 @@ import com.company.model.product.Product;
 import com.company.model.shopping.CodedDiscount;
 import com.company.model.user.Customer;
 import com.company.model.user.Seller;
+import com.company.view.RegisterPanel;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,23 +13,89 @@ import java.util.HashMap;
 public class CostumerController {
 
     public void editPersonalInformation(String field , String editedField) {
+        RegisterAndLoginController registerAndLoginController = new RegisterAndLoginController();
         Customer customer = new Customer();
         if (field.equalsIgnoreCase("username")){
             System.out.println("you can't edit your username !");
 
         }else if (field.equalsIgnoreCase("phone")){
-            customer.setPhone(editedField);
+            editPhone(editedField);
         }else if (field.equalsIgnoreCase("email")){
-            customer.setEmail(editedField);
+            editEmail(editedField);
 
         }else if (field.equalsIgnoreCase("first")){
-            customer.setFirstName(editedField);
+            editFirstName(editedField);
 
         }else if (field.equalsIgnoreCase("last")){
-            customer.setLastName(editedField);
+            editLastName(editedField);
 
         }else if (field.equalsIgnoreCase("password")){
-            customer.setPassword(editedField);
+            editPassword(editedField);
+        }
+    }
+
+    private void editPhone(String phone){
+        Customer customer = new Customer();
+        while (true) {
+            if (RegisterAndLoginController.isPhoneNumberValid(phone) == true) {
+                customer.setPhone(phone);
+                break;
+            } else {
+                System.out.println("invalid phone");
+                continue;
+            }
+        }
+    }
+
+    private void editEmail (String email){
+        Customer customer = new Customer();
+        while (true) {
+            if (RegisterAndLoginController.isEmailAddressValid(email) == true) {
+                customer.setEmail(email);
+                break;
+            } else {
+                System.out.println("invalid Email");
+                continue;
+            }
+        }
+    }
+
+    private void editFirstName(String firstName){
+        Customer customer = new Customer();
+        while (true) {
+            if (RegisterAndLoginController.isPhoneNumberValid(firstName) == true) {
+                customer.setPhone(firstName);
+                break;
+            } else {
+                System.out.println("invalid name");
+                continue;
+            }
+        }
+    }
+
+    private void editLastName(String lastName){
+        Customer customer = new Customer();
+        while (true) {
+            if (RegisterAndLoginController.isPhoneNumberValid(lastName) == true) {
+                customer.setPhone(lastName);
+                break;
+            } else {
+                System.out.println("invalid name");
+                continue;
+            }
+        }
+    }
+
+    private void editPassword (String password){
+        Customer customer = new Customer();
+        while (true) {
+            if (RegisterAndLoginController.isPhoneNumberValid(password) == true) {
+                customer.setPhone(password);
+                break;
+            } else {
+                System.out.println("invalid password");
+                continue;
+            }
         }
     }
 
