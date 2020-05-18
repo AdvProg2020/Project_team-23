@@ -31,7 +31,7 @@ public class CommandPro {
         } else if (command.equalsIgnoreCase("register")) {
 
             input = scanner.nextLine();
-            if (input.startsWith("create account "))
+            if (input.startsWith("create account"))
                 registerPanel.registerAccount(input);
 
         } else if (command.equalsIgnoreCase("view discount codes")) {
@@ -39,6 +39,9 @@ public class CommandPro {
 
         } else if (command.equalsIgnoreCase("view balance")) {
             viewBalance();
+        }
+        else if (command.startsWith("edit")){
+            editField(command);
         }
     }
 
@@ -70,6 +73,19 @@ public class CommandPro {
         }else{
             System.out.println("there is no discount code for you !");
         }
+    }
+
+    private static void editField(String command){
+        CostumerController costumerController = new CostumerController();
+        SellerController sellerController = new SellerController();
+        Account account = new Account();
+        String word[] = command.split("\\s+");
+        if (account.getRoles() == Roles.CUSTOMER){
+            costumerController.editPersonalInformation(word[1] , word[2]);
+        }else if (account.getRoles() == Roles.SELLER){
+            sellerController.editPersonalInformation(word[1] , word[2]);
+        }
+
     }
 
     private static void help() {

@@ -9,7 +9,26 @@ package com.company.controller;
     public class SellerController {
         private static Seller seller;
 
-        public void editPersonalInformation() {}
+        public void editPersonalInformation(String field , String editedField) {
+            Seller seller = new Seller();
+            if (field.equalsIgnoreCase("username")){
+                System.out.println("you can't edit your username !");
+
+            }else if (field.equalsIgnoreCase("phone")){
+                seller.setPhone(editedField);
+            }else if (field.equalsIgnoreCase("email")){
+                seller.setEmail(editedField);
+
+            }else if (field.equalsIgnoreCase("first")){
+                seller.setFirstName(editedField);
+
+            }else if (field.equalsIgnoreCase("last")){
+                seller.setLastName(editedField);
+
+            }else if (field.equalsIgnoreCase("password")){
+                seller.setPassword(editedField);
+            }
+        }
 
         public void editProductInformation() {}
 

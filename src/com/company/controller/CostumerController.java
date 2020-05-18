@@ -4,13 +4,32 @@ package com.company.controller;
 import com.company.model.product.Product;
 import com.company.model.shopping.CodedDiscount;
 import com.company.model.user.Customer;
+import com.company.model.user.Seller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CostumerController {
 
-    public static void editPersonalInformation() {
+    public void editPersonalInformation(String field , String editedField) {
+        Customer customer = new Customer();
+        if (field.equalsIgnoreCase("username")){
+            System.out.println("you can't edit your username !");
+
+        }else if (field.equalsIgnoreCase("phone")){
+            customer.setPhone(editedField);
+        }else if (field.equalsIgnoreCase("email")){
+            customer.setEmail(editedField);
+
+        }else if (field.equalsIgnoreCase("first")){
+            customer.setFirstName(editedField);
+
+        }else if (field.equalsIgnoreCase("last")){
+            customer.setLastName(editedField);
+
+        }else if (field.equalsIgnoreCase("password")){
+            customer.setPassword(editedField);
+        }
     }
 
     public static void viewPersonalInfo() {
