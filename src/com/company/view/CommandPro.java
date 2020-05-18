@@ -24,11 +24,7 @@ public class CommandPro {
         if (command.equalsIgnoreCase("help")) {
             help();
         } else if (command.equalsIgnoreCase("view personal info")) {
-            if (account.getRoles() == Roles.CUSTOMER)
-                CostumerController.viewPersonalInfo();
-            else if (account.getRoles() == Roles.SELLER) {
-
-            }
+            viewPersonalInfo();
 
         } else if (command.equalsIgnoreCase("login")) {
 
@@ -38,15 +34,41 @@ public class CommandPro {
             if (input.startsWith("create account "))
                 registerPanel.registerAccount(input);
 
-        } else if (command.equalsIgnoreCase("")) {
+        } else if (command.equalsIgnoreCase("view discount codes")) {
+            viewDiscountCodes();
 
         } else if (command.equalsIgnoreCase("view balance")) {
-            if (account.getRoles() == Roles.SELLER) {
-                sellerController.viewBalance();
+            viewBalance();
+        }
+    }
 
-            } else if (account.getRoles() == Roles.CUSTOMER){
-                costumerController.viewBalance();
-            }
+    private static void viewBalance() {
+        SellerController sellerController = new SellerController();
+        CostumerController costumerController = new CostumerController();
+        Account account = new Account();
+        if (account.getRoles() == Roles.CUSTOMER)
+            sellerController.viewBalance();
+        else if (account.getRoles() == Roles.SELLER) {
+            costumerController.viewBalance();
+        }
+    }
+
+    private static void viewPersonalInfo() {
+        Account account = new Account();
+        if (account.getRoles() == Roles.CUSTOMER)
+            CostumerController.viewPersonalInfo();
+        else if (account.getRoles() == Roles.SELLER) {
+            SellerController.viewPersonalInfo();
+        }
+    }
+
+    private static void viewDiscountCodes(){
+        CostumerController costumerController = new CostumerController();
+        Customer customer = new Customer();
+        if (customer.getRoles() == Roles.CUSTOMER) {
+            costumerController.viewDiscountCodes();
+        }else{
+            System.out.println("there is no discount code for you !");
         }
     }
 

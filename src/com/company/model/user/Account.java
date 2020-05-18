@@ -107,5 +107,13 @@ public class Account {
     public double getMoney() {
         return money;
     }
+
+    public ArrayList<CodedDiscount> getCodedDiscounts() {
+        return codedDiscounts;
+    }
+
+    public void setCodedDiscounts(ArrayList<CodedDiscount> codedDiscounts) {
+        this.codedDiscounts = codedDiscounts;
+    }
 }
 

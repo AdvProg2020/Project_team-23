@@ -2,6 +2,7 @@ package com.company.controller;
 
 
 import com.company.model.product.Product;
+import com.company.model.shopping.CodedDiscount;
 import com.company.model.user.Customer;
 
 import java.util.ArrayList;
@@ -52,8 +53,9 @@ public class CostumerController {
         return customer.getMoney();
     }
 
-    public ArrayList<String> viewDiscountCodes() {
-        return null;
+    public ArrayList<CodedDiscount> viewDiscountCodes() {
+        Customer customer = new Customer();
+        return customer.getCodedDiscounts();
     }
 
 

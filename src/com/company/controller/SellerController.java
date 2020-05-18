@@ -1,6 +1,7 @@
 package com.company.controller;
 
     import com.company.model.product.Product;
+    import com.company.model.user.Customer;
     import com.company.model.user.Seller;
 
     import java.util.ArrayList;
@@ -30,6 +31,10 @@ package com.company.controller;
             return seller.getMoney();
         }
 
+        public static void viewPersonalInfo() {
+            Seller seller = new Seller();
+            seller.toString();
+        }
 
 
 

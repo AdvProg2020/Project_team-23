@@ -2,6 +2,7 @@ package com.company.model.user;
 
 
 import com.company.model.product.Product;
+import com.company.model.shopping.CodedDiscount;
 import com.company.model.shopping.SellLog;
 
 import java.util.ArrayList;
@@ -79,6 +80,16 @@ public class Seller extends Account {
 
     public void setCompany(String company) {
         this.company = company;
+    }
+
+    @Override
+    public ArrayList<CodedDiscount> getCodedDiscounts() {
+        return super.getCodedDiscounts();
+    }
+
+    @Override
+    public void setCodedDiscounts(ArrayList<CodedDiscount> codedDiscounts) {
+        super.setCodedDiscounts(codedDiscounts);
     }
 }
 
